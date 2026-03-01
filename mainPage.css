@@ -33,7 +33,7 @@ h1, h2, h3, h4, p {
     font-size: 40px
 }
 
-#bodyTextDiv {
+.bodyTextDiv {
     width: 50vw
 }
 
@@ -64,7 +64,7 @@ h1, h2, h3, h4, p {
     
     /* 3. Shift to the right */
     /* 40px is top/bottom, 10% is left, auto is right */
-    margin: 40px auto 40px 18%; 
+    margin: 40px auto 40px 16%; 
     
     box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
     box-sizing: border-box;
@@ -78,6 +78,7 @@ h1, h2, h3, h4, p {
     border: 1px solid #ccc;
     overflow-y: auto; /* Adds a scrollbar if content is too long */
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .content-section {
@@ -168,6 +169,55 @@ h1, h2, h3, h4, p {
     text-align: center;
     margin-top: 5px;
     font-weight: bold;
+}
+
+#factsListCover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8ad92;
+    width: 70vw;
+    height: 50vh;
+    margin-left: 2vw;
+    margin-top: 5vh;
+
+    gap: 10px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.fact {
+    width: 23%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #b8774f;
+    
+    text-align: center;
+}
+
+.stats {
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.factText, .smallfactText {
+    margin: 15px;
+}
+
+.smallfactText {
+    font-size: 14px;
+}
+
+.seperator {
+    width: 90%;
+    height: 2px;
+    background-color: black;
+    align-self: center;
+    justify-self: center;
+    margin: 20px 0px
 }
 
 /* Ensure the grid stacks on small screens */
