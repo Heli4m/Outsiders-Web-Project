@@ -64,7 +64,7 @@ h1, h2, h3, p {
     
     /* 3. Shift to the right */
     /* 40px is top/bottom, 10% is left, auto is right */
-    margin: 40px auto 40px 15%; 
+    margin: 40px auto 40px 18%; 
     
     box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
     box-sizing: border-box;
