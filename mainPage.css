@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1, h2, h3, p {
+    font-family: 'Lexend', sans-serif;
+}
+
+.mainBodyText {
+    font-size: 14px;
+}
+
+.mainBodyTitle {
+    font-size: 14px;
+    padding-top: 14px;
+}
+
+#pageTitleCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 30vh;
+    background-color: #d8ad92;
+}
+
+#pageTitle {
+    font-size: 40px
+}
+
+#bodyTextDiv {
+    width: 50vw
+}
+
+#bodyTextDivCover {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#studentNames {
+    font-size: 20px;
+}
+
+#folder {
+    position: relative; 
+    background-color: #b8774f;
+    
+    /* 1. Make it less wide (Adjust this % to your liking) */
+    width: 70vw; 
+    
+    /* 2. Make it taller if the new narrow width makes text too long */
+    height: 60vh; 
+    
+    border: 2px solid black;
+    border-radius: 0 10px 10px 10px;
+    padding: 15px; 
+    
+    /* 3. Shift to the right */
+    /* 40px is top/bottom, 10% is left, auto is right */
+    margin: 40px auto 40px 15%; 
+    
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+#folderContent {
+    background-color: #f1f1f1; 
+    height: 100%;
+    padding: 25px; /* More space inside the 'paper' */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Adds a scrollbar if content is too long */
+    box-sizing: border-box;
+}
+
+.content-section {
+    /* This ensures only the active tab's grid is visible */
+    width: 100%;
+    animation: fadeIn 0.3s ease-in; /* Adds a smooth transition */
+}
+
+.tabContainer {
+    position: absolute;
+    left: 100%; 
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    margin-left: -2px; 
+}
+
+.tab, .tabActive {
+    width: 50px;
+    padding: 12px 5px;
+    border: 2px solid black;
+    
+    border-left: none; 
+    
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.tab {
+    background-color: #b8774f; 
+    z-index: 5;
+}
+
+.tabActive {
+    background-color: #f1f1f1; 
+    color: black;
+    width: 60px; 
+    transform: translateX(2px); 
+    z-index: 15; 
+    
+    box-shadow: 3px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* The Grid Container */
+.dossier-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Info takes 60%, Photo takes 40% */
+    gap: 20px;
+    align-items: start;
+}
+
+/* Controls the overall width of the photo column */
+.file-photo {
+    width: 300px; /* Adjust this number to make the images smaller or larger */
+    justify-self: center; /* Centers the photo in its grid column */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 8px;
+    border: 1px solid #bbb;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+    transform: rotate(1.5deg); /* Slight tilt for the 'case file' look */
+}
+
+.photo-frame img {
+    width: 100%;       /* Fills the 200px container */
+    height: 300px;     /* FORCES all images to the same height */
+    object-fit: cover; /* Crops the photo so it doesn't look squished/stretched */
+    display: block;
+    filter: grayscale(100%); /* Keeps that 1960s clinical vibe */
+    border: 1px solid #333;
+}
+
+.caption {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Ensure the grid stacks on small screens */
+@media (max-width: 800px) {
+    .dossier-grid {
+        grid-template-columns: 1fr;
+    }
+}
